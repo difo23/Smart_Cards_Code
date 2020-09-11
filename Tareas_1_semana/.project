@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Tareas_1_semana</name>
+	<comment></comment>
+	<projects>
+		<project>examples_scLTC31</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>de.cardcontact.sse4eclipse.builder.SSE4EBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>de.cardcontact.sse4eclipse.nature.SSE4ENature</nature>
+	</natures>
+</projectDescription>

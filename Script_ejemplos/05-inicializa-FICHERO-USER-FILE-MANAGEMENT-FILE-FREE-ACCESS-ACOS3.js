@@ -1,0 +1,49 @@
+/* SE INICIALIZA EL FICHERO USER FILE MANAGEMENT FILE
+* SE CREAN 8 FICHEROS DE USUARIO DIRECCIONES 
+* EC00 EC01 EC02 EC03 EC04 EC05 EC06 EC07
+* TODOS LOS FICHEROS CON FREE ACCESS Y SIN FLAGS DE CONTROL DE ACCESO.   */
+
+
+
+card = new Card();
+//atr = card.reset(Card.RESET_COLD);
+//print(atr);
+print("");
+print("PRESENTACION del IC para iniciar: ACOSTEST= 41434F53 54455354");
+resp = card.plainApdu(new ByteString("80 20 07 00 08 41 43 4F 53 54 45 53 54", HEX));
+print("Código SW: " + card.SW.toString(16));
+print("");
+
+//print("SE SELECCIONA EL FICHERO USER MANAGEMENT FILE FF04");
+resp = card.plainApdu(new ByteString("80 A4 00 00 02 FF 04", HEX));
+
+print("          USER MANAGEMENT FILE FF04");
+
+// SE ESCRIBE EL RECORD 0 PARA EL PRIMER FICHERO BINARIO DE USUARIO CON EL VALOR 01 00 00 00 EC 00 80
+resp = card.plainApdu(new ByteString("80 D2 00 00 07 01 00 00 00 EC 00 80", HEX));
+print("Código SW: " + card.SW.toString(16));
+
+// SE ESCRIBE EL RECORD 1 CON EL VALOR 01 00 00 00 EC 01 80
+resp = card.plainApdu(new ByteString("80 D2 01 00 07 01 00 00 00 EC 01 80", HEX));
+print("Código SW: " + card.SW.toString(16));
+
+// SE ESCRIBE EL RECORD 2 CON EL VALOR 02 00 00 00 EC 02 80
+resp = card.plainApdu(new ByteString("80 D2 02 00 07 02 00 00 00 DC 02 80", HEX));
+print("Código SW: " + card.SW.toString(16));
+
+// SE ESCRIBE EL RECORD 3 CON EL VALOR 
+//RELLENAR POR EL ALUMNO
+
+// SE ESCRIBE EL RECORD 4 CON EL VALOR 
+//RELLENAR POR EL ALUMNO
+
+// SE ESCRIBE EL RECORD 5 CON EL VALOR 
+//RELLENAR POR EL ALUMNO
+
+// SE ESCRIBE EL RECORD 6 CON EL VALOR 
+//RELLENAR POR EL ALUMNO
+
+// SE ESCRIBE EL RECORD 7 CON EL VALOR 
+//RELLENAR POR EL ALUMNO
+
+card.close();
